@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+// import { Outfit } from 'next/font/google';
 import StyledComponentsRegistry from './lib/registry';
 
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 
-export const outfit = Outfit({
-  subsets: ['latin', 'latin-ext'],
-  display: 'swap',
-});
+// export const outfit = Outfit({
+//   subsets: ['latin', 'latin-ext'],
+//   display: 'swap',
+// });
 
 export const metadata: Metadata = {
   title: 'Series Seeker',
@@ -27,10 +27,13 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={outfit.className}>
+        {/* <body className={outfit.className}> */}
+        <body>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </body>
       </html>
     </ClerkProvider>
   );
+  {
+  }
 }

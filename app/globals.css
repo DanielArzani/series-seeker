@@ -80,3 +80,25 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/*---------------------------
+  CLERK LOGIN FORM STYLES
+---------------------------*/
+
+/* card body */
+.cl-card,
+.cl-card,
+.cl-signIn-start {
+}
+
+.cl-formButtonPrimary {
+  font-size: 1422px !important;
+  text-transform: none !important;
+  background-color: red !important;
+}
+
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+  background-color: red !important;
+}
