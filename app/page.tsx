@@ -1,6 +1,9 @@
+import styles from './page.module.css';
+
 /**
- * The homepage, the one users will get to at www.site.com/ (the root route)
+ * The homepage
+ * The root route (/)
  */
 export default function Home() {
-  return <div>Home Page</div>;
+  return <div>home page</div>;
 }

@@ -1,7 +1,7 @@
-const LIGHT_THEME = {
+export const LIGHT_THEME = {
   bodyBg: 'lavender',
 };
 
-const DARK_THEME = {
+export const DARK_THEME = {
   bodyBg: 'darkOrchid',
 };
