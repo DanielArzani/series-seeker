@@ -3,6 +3,7 @@ import { Outfit } from 'next/font/google';
 import StyledComponentsRegistry from './lib/registry';
 
 import './globals.css';
+import { ClerkProvider } from '@clerk/nextjs';
 
 export const outfit = Outfit({
   subsets: ['latin', 'latin-ext'],
@@ -24,10 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={outfit.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en'>
+        <body className={outfit.className}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
