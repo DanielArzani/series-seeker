@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import StyledComponentsRegistry from './lib/registry';
 import { ClerkProvider } from '@clerk/nextjs';
 import { outfit } from './lib/fonts/fonts';
 
@@ -22,9 +21,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={outfit.className}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </body>
+        <body className={outfit.className}>{children}</body>
       </html>
     </ClerkProvider>
   );
