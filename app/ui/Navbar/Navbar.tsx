@@ -7,6 +7,9 @@ import moviesIcon from '@/public/icon-nav-movies.svg';
 import tvIcon from '@/public/icon-nav-tv-series.svg';
 import bookmarkIcon from '@/public/icon-nav-bookmark.svg';
 
+/**
+ * The navigation bar, holds the Links to the various routes on the app
+ */
 export default function Navbar() {
   return (
     <nav>

@@ -20,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang='en'>
-        <body className={`${outfit.className}`}>{children}</body>
+      <html lang='en' dir='ltr'>
+        <body className={`${outfit.className} prose`}>{children}</body>
       </html>
     </ClerkProvider>
   );

@@ -18,6 +18,7 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "@types/cookie": "^0.6.0",
     "@types/node": "^20",
     "@types/react": "^18",
