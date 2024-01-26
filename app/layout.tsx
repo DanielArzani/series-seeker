@@ -1,14 +1,9 @@
 import type { Metadata } from 'next';
-// import { Outfit } from 'next/font/google';
 import StyledComponentsRegistry from './lib/registry';
+import { ClerkProvider } from '@clerk/nextjs';
+import { outfit } from './lib/fonts/fonts';
 
 import './globals.css';
-import { ClerkProvider } from '@clerk/nextjs';
-
-// export const outfit = Outfit({
-//   subsets: ['latin', 'latin-ext'],
-//   display: 'swap',
-// });
 
 export const metadata: Metadata = {
   title: 'Series Seeker',
@@ -27,8 +22,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        {/* <body className={outfit.className}> */}
-        <body>
+        <body className={outfit.className}>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </body>
       </html>
