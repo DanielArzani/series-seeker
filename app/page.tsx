@@ -1,6 +1,5 @@
 'use client';
 
-import { changeTheme } from './lib/utils/changeTheme';
 import Header from './ui/Header/Header';
 
 /**
