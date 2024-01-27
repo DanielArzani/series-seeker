@@ -12,11 +12,34 @@ import bookmarkIcon from '@/public/icon-nav-bookmark.svg';
  */
 export default function Navbar() {
   return (
-    <nav>
-      <Image src={homeIcon} alt='Go to home page' />
-      <Image src={moviesIcon} alt='Go to movies page' />
-      <Image src={tvIcon} alt='Go to tv shows page' />
-      <Image src={bookmarkIcon} alt='Go to your bookmarks' />
+    <nav className='flex gap-5 items-center lg:flex-col lg:mb-auto lg:mt-20'>
+      <button>
+        <Image className='white-filter' src={homeIcon} alt='Go to home page' />
+      </button>
+
+      <button>
+        <Image
+          className='white-filter'
+          src={moviesIcon}
+          alt='Go to movies page'
+        />
+      </button>
+
+      <button>
+        <Image
+          className='white-filter'
+          src={tvIcon}
+          alt='Go to tv shows page'
+        />
+      </button>
+
+      <button>
+        <Image
+          className='white-filter'
+          src={bookmarkIcon}
+          alt='Go to your bookmarks'
+        />
+      </button>
     </nav>
   );
 }

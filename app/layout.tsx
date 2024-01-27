@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 import { outfit } from './lib/fonts/fonts';
 
-import './globals.css';
+import './globals.tw.css';
 
 export const metadata: Metadata = {
   title: 'Series Seeker',
@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en' dir='ltr'>
-        <body className={`${outfit.className} prose`}>{children}</body>
+        <body className={`${outfit.className} prose bg-bodyBg p-8`}>
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

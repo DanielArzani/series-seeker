@@ -7,8 +7,9 @@ import logo from '@/public/logo.svg';
  */
 export default function Logo() {
   return (
-    <div>
+    <h1>
       <Image src={logo} alt='Series Seeker' />
-    </div>
+      <span className='sr-only'>Series Seeker</span>
+    </h1>
   );
 }
