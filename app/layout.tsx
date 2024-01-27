@@ -3,6 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { outfit } from './lib/fonts/fonts';
 
 import './globals.tw.css';
+import Header from './ui/Header/Header';
 
 export const metadata: Metadata = {
   title: 'Series Seeker',
@@ -22,6 +23,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en' dir='ltr'>
         <body className={`${outfit.className} prose bg-bodyBg p-8`}>
+          <Header />
           {children}
         </body>
       </html>

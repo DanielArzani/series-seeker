@@ -1,7 +1,3 @@
-'use client';
-
-import Header from './ui/Header/Header';
-
 /**
  * The homepage
  * The root route (/)
@@ -9,8 +5,6 @@ import Header from './ui/Header/Header';
 export default function Homepage() {
   return (
     <>
-      <Header />
-
       {/* these are my guesses at how this be structured and whether they are client or server 
       components */}
       {/* <header id="server--0">

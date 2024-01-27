@@ -28,4 +28,8 @@
   .white-filter:hover {
     filter: brightness(0) invert(1);
   }
+
+  .selected.white-filter {
+    filter: brightness(0) invert(1);
+  }
 }
