@@ -1,77 +1,58 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
-import clsx from 'clsx';
-
 import homeIcon from '@/public/icon-nav-home.svg';
 import moviesIcon from '@/public/icon-nav-movies.svg';
 import tvIcon from '@/public/icon-nav-tv-series.svg';
 import bookmarkIcon from '@/public/icon-nav-bookmark.svg';
-import { usePathname } from 'next/navigation';
+import IconLink from '@/app/components/ImageLink/IconLink';
 
 /**
  * The navigation bar, holds the Links to the various routes on the app and persists the state of the active tab
  */
 export default function Navbar() {
-  const pathname = usePathname();
-
-  // Function to determine if the route is selected
-  const isSelected = (route: string) => pathname === route;
-
   return (
-    <nav className='flex gap-5 items-center lg:flex-col lg:mb-auto lg:mt-20'>
-      <button>
-        <Link href='/'>
-          <Image
-            className={clsx('white-filter', {
-              selected: isSelected('/'),
-            })}
-            src={homeIcon}
-            alt='Go to home page'
+    <nav className=' lg:mb-auto lg:mt-20'>
+      <ul className='flex gap-5 items-center lg:flex-col'>
+        <li>
+          <IconLink
+            icon={homeIcon}
+            altText='Go to home page'
+            accessibleText='Home'
+            iconClassName='white-filter'
+            url='/'
           />
-          <span className='sr-only'>Go to home page</span>
-        </Link>
-      </button>
+        </li>
 
-      <button>
-        <Link href='/movies'>
-          <Image
-            className={clsx('white-filter', {
-              selected: isSelected('/movies'),
-            })}
-            src={moviesIcon}
-            alt='Go to movies page'
+        <li>
+          <IconLink
+            icon={moviesIcon}
+            altText='Go to movies page'
+            accessibleText='Movies'
+            iconClassName='white-filter'
+            url='/movies'
           />
-          <span className='sr-only'>Go to movies page</span>
-        </Link>
-      </button>
+        </li>
 
-      <button>
-        <Link href='/tv-series'>
-          <Image
-            className={clsx('white-filter', {
-              selected: isSelected('/tv-series'),
-            })}
-            src={tvIcon}
-            alt='Go to tv shows page'
+        <li>
+          <IconLink
+            icon={tvIcon}
+            altText='Go to tv shows page'
+            accessibleText='TV-Series'
+            iconClassName='white-filter'
+            url='/tv-series'
           />
-          <span className='sr-only'>Go to tv shows page</span>
-        </Link>
-      </button>
+        </li>
 
-      <button>
-        <Link href='/bookmarks'>
-          <Image
-            className={clsx('white-filter', {
-              selected: isSelected('/bookmarks'),
-            })}
-            src={bookmarkIcon}
-            alt='Go to your bookmarks'
+        <li>
+          <IconLink
+            icon={bookmarkIcon}
+            altText='Go to your bookmarks'
+            accessibleText='Bookmarks'
+            iconClassName='white-filter'
+            url='/bookmarks'
           />
-          <span className='sr-only'>Go to your bookmarks</span>
-        </Link>
-      </button>
+        </li>
+      </ul>
     </nav>
   );
 }
