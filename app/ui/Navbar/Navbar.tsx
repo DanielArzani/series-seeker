@@ -30,6 +30,7 @@ export default function Navbar() {
             src={homeIcon}
             alt='Go to home page'
           />
+          <span className='sr-only'>Go to home page</span>
         </Link>
       </button>
 
@@ -42,6 +43,7 @@ export default function Navbar() {
             src={moviesIcon}
             alt='Go to movies page'
           />
+          <span className='sr-only'>Go to movies page</span>
         </Link>
       </button>
 
@@ -54,6 +56,7 @@ export default function Navbar() {
             src={tvIcon}
             alt='Go to tv shows page'
           />
+          <span className='sr-only'>Go to tv shows page</span>
         </Link>
       </button>
 
@@ -66,6 +69,7 @@ export default function Navbar() {
             src={bookmarkIcon}
             alt='Go to your bookmarks'
           />
+          <span className='sr-only'>Go to your bookmarks</span>
         </Link>
       </button>
     </nav>
