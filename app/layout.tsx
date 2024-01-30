@@ -4,6 +4,7 @@ import { outfit } from './lib/fonts/fonts';
 
 import './globals.tw.css';
 import Header from './ui/Header/Header';
+import SearchForm from './ui/SearchForm/SearchForm';
 
 export const metadata: Metadata = {
   title: 'Series Seeker',
@@ -24,6 +25,7 @@ export default function RootLayout({
       <html lang='en' dir='ltr'>
         <body className={`${outfit.className} prose bg-bodyBg`}>
           <Header />
+          <SearchForm />
           {children}
         </body>
       </html>

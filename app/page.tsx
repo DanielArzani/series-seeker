@@ -7,7 +7,6 @@ import SearchForm from './ui/SearchForm/SearchForm';
 export default function Homepage() {
   return (
     <>
-      <SearchForm />
       {/* these are my guesses at how this be structured and whether they are client or server 
       components */}
       {/* <header id="server--0">  ✅
