@@ -5,7 +5,7 @@ import SearchBar from '@/app/components/SearchBar/SearchBar';
  */
 export default function SearchForm() {
   return (
-    <form>
+    <form className='search-form'>
       <SearchBar />
     </form>
   );

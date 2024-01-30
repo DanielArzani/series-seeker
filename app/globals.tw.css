@@ -24,14 +24,14 @@
   body {
     display: grid;
     grid-template-rows: 56px 1fr 1fr 1fr 61px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 16px 1fr 16px;
 
     color: white;
   }
 
   @media (min-width: 768px) {
     body {
-      grid-template-rows: 23px 1fr 2fr 3fr 56px;
+      grid-template-rows: 23px 72px 1fr 10fr 56px;
       grid-template-columns: 25px 1fr 25px;
     }
   }
@@ -55,9 +55,19 @@
     grid-column: 1/-1;
   }
 
+  .search-form {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
   @media (min-width: 768px) {
     .header {
       grid-row: 2/3;
+      grid-column: 2/3;
+    }
+
+    .search-form {
+      grid-row: 3/4;
       grid-column: 2/3;
     }
   }
@@ -66,6 +76,11 @@
     .header {
       grid-row: 2/5;
       grid-column: 2/3;
+    }
+
+    .search-form {
+      grid-row: 2/3;
+      grid-column: 4/-1;
     }
   }
 }
