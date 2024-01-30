@@ -1,3 +1,5 @@
+import SearchForm from './ui/SearchForm/SearchForm';
+
 /**
  * The homepage
  * The root route (/)
@@ -5,16 +7,17 @@
 export default function Homepage() {
   return (
     <>
+      <SearchForm />
       {/* these are my guesses at how this be structured and whether they are client or server 
       components */}
-      {/* <header id="server--0">
-        <div id='server--1' className='logo'></div>
+      {/* <header id="server--0">  ✅
+        <div id='server--1' className='logo'></div> ✅
 
-        <nav id='client--1'></nav>
+        <nav id='client--1'></nav> ✅
 
         <div id='server--2(clerk)' className='userProfileImage'>
             <UserButton afterSignOutUrl='/login' />
-        </div>
+        </div> ✅
       </header>
 
       <div id='client--2' className='searchBar'></div>

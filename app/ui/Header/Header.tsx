@@ -8,7 +8,7 @@ import Navbar from '../Navbar/Navbar';
 export default function Header() {
   return (
     <>
-      <header className='flex w-full max-w-screen-2xl justify-between items-center bg-headerBg px-4 py-4 lg:fixed lg:left-0 lg:flex-col lg:w-auto lg:h-full lg:navbar-height md:rounded-[10px] '>
+      <header className='header flex w-full max-w-screen-2xl justify-between items-center bg-headerBg px-4 py-4 lg:left-0 lg:flex-col lg:w-auto md:rounded-[10px] '>
         <Logo />
 
         <Navbar />

@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en' dir='ltr'>
-        <body className={`${outfit.className} prose bg-bodyBg p-8`}>
+        <body className={`${outfit.className} prose bg-bodyBg`}>
           <Header />
           {children}
         </body>
