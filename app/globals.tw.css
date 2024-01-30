@@ -80,7 +80,7 @@
 
     .search-form {
       grid-row: 2/3;
-      grid-column: 4/-1;
+      grid-column: 4/5;
     }
   }
 }
