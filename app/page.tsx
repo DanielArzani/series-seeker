@@ -1,4 +1,5 @@
 import SearchForm from './ui/SearchForm/SearchForm';
+import TrendingContent from './ui/TrendingContent/TrendingContent';
 
 /**
  * The homepage
@@ -7,6 +8,7 @@ import SearchForm from './ui/SearchForm/SearchForm';
 export default function Homepage() {
   return (
     <>
+      <TrendingContent />
       {/* these are my guesses at how this be structured and whether they are client or server 
       components */}
       {/* <header id="server--0">  ✅
@@ -19,7 +21,7 @@ export default function Homepage() {
         </div> ✅
       </header>
 
-      <div id='client--2' className='searchBar'></div>
+      <div id='client--2' className='searchBar'></div> ✅
 
       <div id='server--3' className='trending movies'></div>
 
