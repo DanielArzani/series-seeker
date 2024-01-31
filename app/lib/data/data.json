@@ -13,10 +13,10 @@
       }
     },
     "year": 2019,
-    "category": "Movie",
-    "rating": "PG",
+    "category": "Sermon",
     "isBookmarked": false,
-    "isTrending": true
+    "isTrending": true,
+    "linkToYoutubeVideo": "https://www.youtube.com/watch?v=TZ5YlUzqHJU&list=RDTZ5YlUzqHJU&start_radio=1"
   },
   {
     "title": "Bottom Gear",

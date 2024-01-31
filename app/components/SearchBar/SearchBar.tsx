@@ -29,7 +29,7 @@ export default function SearchBar() {
       <label htmlFor='search' className='sr-only'>
         Search for any movies or TV series
       </label>
-      <p id='error' role='alert' className='sr-only'></p>
+      <p id='error' role='alert' className='text-red-500'></p>
 
       <div className='flex items-center'>
         <input
@@ -41,6 +41,7 @@ export default function SearchBar() {
             handleSearch(e.target.value);
           }}
           defaultValue={searchParams.get('query')?.toString()}
+          required
         />
         <div className='absolute left-0 inset-y-0 flex items-center pl-3 pointer-events-none'>
           <Image src={searchIcon} alt='Search' width={20} height={20} />
