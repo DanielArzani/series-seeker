@@ -7,6 +7,9 @@
   html {
     --bodyBg: #10141e;
     --headerBg: #161d2f;
+    --text-primary: #ffffff;
+    --text-secondary: #5a698f;
+    --bg-bookmarkBtnBg: #5a698f;
   }
 }
 
@@ -25,16 +28,16 @@
   body {
     display: grid;
     grid-template-rows: 56px 1fr 4fr 6fr;
-    grid-template-columns: 16px 1fr 16px;
+    grid-template-columns: 16px minmax(0, 1fr) 16px;
 
-    color: white;
+    overflow: auto;
   }
 
   /* tablet */
   @media (min-width: 768px) {
     body {
       grid-template-rows: 23px 72px 1fr 4fr 6fr;
-      grid-template-columns: 25px 1fr 25px;
+      grid-template-columns: 25px minmax(0, 1fr) 25px;
     }
   }
 
@@ -42,7 +45,7 @@
   @media (min-width: 1024px) {
     body {
       grid-template-rows: 32px 1fr 4fr 6fr;
-      grid-template-columns: 164px 1fr 36px;
+      grid-template-columns: 164px minmax(0, 1fr) 36px;
     }
   }
 
@@ -125,9 +128,23 @@
     filter: brightness(0) invert(1);
   }
 
-  .center {
-    box-sizing: content-box;
-    margin-inline: auto;
-    max-inline-size: var(--measure);
+  .header-large {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  .header-small {
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .header-large {
+      font-size: 2rem;
+    }
+
+    .header-small {
+      font-size: 1.5rem;
+    }
   }
 }

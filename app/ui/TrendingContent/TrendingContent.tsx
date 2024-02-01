@@ -6,9 +6,16 @@ import VideoCard from '@/app/components/VideoCard/VideoCard';
 export default function TrendingContent() {
   return (
     <div className='trending'>
-      <h2 className='secondary-header'>Trending</h2>
+      <h2 className='header-large'>Trending</h2>
 
-      <VideoCard />
+      <div className='flex gap-1 items-center overflow-auto'>
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+        <VideoCard />
+      </div>
     </div>
   );
 }

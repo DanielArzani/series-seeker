@@ -10,6 +10,9 @@ const config: Config = {
       colors: {
         bodyBg: 'var(--bodyBg)',
         headerBg: 'var(--headerBg)',
+        textPrimary: 'var(--text-primary)',
+        textSecondary: 'var(--text-secondary)',
+        bookmarkBtnBg: 'var(--bg-bookmarkBtnBg)',
       },
     },
   },
