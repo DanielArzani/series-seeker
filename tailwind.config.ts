@@ -8,11 +8,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bodyBg: 'var(--bodyBg)',
-        headerBg: 'var(--headerBg)',
-        textPrimary: 'var(--text-primary)',
-        textSecondary: 'var(--text-secondary)',
-        bookmarkBtnBg: 'var(--bg-bookmarkBtnBg)',
+        darkBlue: 'var(--dark-blue)',
+        semiDarkBlue: 'var(--semi-dark-blue)',
+        pureWhite: 'var(--pure-white)',
+        greyishBlue: 'var(--greyish-blue)',
+        logoRed: 'var(--logo-red)',
       },
     },
   },

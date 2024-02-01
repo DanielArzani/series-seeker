@@ -24,7 +24,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en' dir='ltr'>
         <body
-          className={`${outfit.className} prose bg-bodyBg text-textPrimary`}
+          className={`${outfit.className} prose bg-darkBlue text-pureWhite`}
         >
           <Header />
           <SearchForm />

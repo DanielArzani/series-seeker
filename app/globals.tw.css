@@ -5,11 +5,11 @@
 /* default theme */
 @layer base {
   html {
-    --bodyBg: #10141e;
-    --headerBg: #161d2f;
-    --text-primary: #ffffff;
-    --text-secondary: #5a698f;
-    --bg-bookmarkBtnBg: #5a698f;
+    --dark-blue: #10141e;
+    --semi-dark-blue: #161d2f;
+    --pure-white: #ffffff;
+    --greyish-blue: #5a698f;
+    --logo-red: #fc4747;
   }
 }
 
