@@ -1,3 +1,4 @@
+import MainContent from './ui/MainContent/MainContent';
 import SearchForm from './ui/SearchForm/SearchForm';
 import TrendingContent from './ui/TrendingContent/TrendingContent';
 
@@ -9,6 +10,7 @@ export default function Homepage() {
   return (
     <>
       <TrendingContent />
+      <MainContent />
       {/* these are my guesses at how this be structured and whether they are client or server 
       components */}
       {/* <header id="server--0">  ✅

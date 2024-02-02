@@ -11,40 +11,43 @@ import Bookmark from '../Bookmark/Bookmark';
  */
 export default function MainContentCard() {
   return (
-    <div
-      className={`relative rounded-md w-[164px] md:w-[280px] shrink-0 overflow-hidden`}
-    >
+    <div className='rounded-md'>
       <Link href='/'>
-        {/* Image wrapper should likely expand to parent's width and height */}
+        <div className='relative'>
+          <Image
+            className='rounded-md'
+            src={thumbnailLarge}
+            width={560}
+            height={348}
+            alt=''
+          />
 
-        <Image
-          src={thumbnailLarge}
-          alt=''
-          objectFit='cover'
-          className='rounded-md'
-        />
+          <button className='bookmarkBtn flex items-center justify-center absolute right-5 top-5'>
+            <Bookmark isActive={false} />
+
+            <span className='sr-only'>Bookmark this</span>
+          </button>
+        </div>
+
+        <div className='flex flex-col-reverse'>
+          <h2 className='header-small'>Beyond Earth</h2>
+
+          <p className='flex gap-1 font-light text-pureWhite text-xs opacity-75'>
+            <span>2019</span>
+
+            <span className='opacity-75 h-1 w-1 bg-pureWhite rounded-full self-center'></span>
+
+            <span className='flex gap-1'>
+              <Image src={movieIcon} alt='' width={12} height={12} />
+              Movie
+            </span>
+
+            <span className='opacity-75 h-1 w-1 bg-pureWhite rounded-full self-center'></span>
+
+            <span>PG</span>
+          </p>
+        </div>
       </Link>
-
-      {/* Bookmark button */}
-      <button className='absolute right-2 top-2'>
-        <Bookmark isActive={false} />
-      </button>
-
-      {/* Text content */}
-      <div className='absolute bottom-0 left-0 p-2 text-white'>
-        <p className='text-[11px] leading-none'>
-          <span>41994</span>
-          <span> • </span>{' '}
-          {/* Circle divider (use an actual dot or image as needed) */}
-          <Image src={movieIcon} alt='' width={12} height={12} />
-          <span> Action</span>
-          <span> • </span> {/* Circle divider */}
-          <span>PG</span>
-        </p>
-        <h2 className='text-[14px] leading-none font-medium'>
-          Earths Untouched
-        </h2>
-      </div>
     </div>
   );
 }
