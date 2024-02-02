@@ -8,7 +8,7 @@ export default function TrendingContent() {
     <div className='trending'>
       <h2 className='header-large'>Trending</h2>
 
-      <div className='flex gap-1 items-center overflow-auto'>
+      <div className='flex gap-10 items-center overflow-auto'>
         <VideoCard />
         <VideoCard />
         <VideoCard />

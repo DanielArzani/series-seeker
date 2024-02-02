@@ -42,6 +42,7 @@ export default function SearchBar() {
           }}
           defaultValue={searchParams.get('query')?.toString()}
           required
+          style={{ caretColor: 'var(--logo-red)' }}
         />
         <div className='absolute left-0 inset-y-0 flex items-center pl-3 pointer-events-none'>
           <Image src={searchIcon} alt='Search' width={20} height={20} />
