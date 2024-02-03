@@ -7,7 +7,7 @@ export default function MainContent() {
   return (
     <main className='mainContent'>
       <h2 className='header-large'>Recommended for you</h2>
-      <div className='grid-container'>
+      <div className='main-content-grid'>
         <VideoCard />
         <VideoCard />
         <VideoCard />

@@ -1,97 +1,89 @@
+'use client';
+
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { URLType } from '@/app/lib/types/URLType';
 
 type IconLinkProps = {
-  accessibleText: string;
-  activeStyles?: string;
-  altText: string;
-  icon: string;
-  iconClassName?: string;
-  iconDimensions?: [width: number, height: number];
-  isSrOnly?: boolean;
-  url: string;
+  url: URLType;
 };
 
 /**
- * This link uses the Link component from next/link and contains an image and accessible text. The component checks the url and applies
- * the 'activeStyles' to the link container if the user's current URL matches the 'url' prop, allowing for custom styling when the link is active.
- * @param accessibleText - Text that is either hidden from sighted users but revealed to screen readers (using 'sr-only' class) or displayed alongside the icon. It inherits the text color of its parent.
- * @param activeStyles - The styles or classes to apply to the link container when the component's 'url' matches the current URL. These can be global styles or Tailwind CSS classes.
- * @param altText - The alternate text for the icon, used for accessibility.
- * @param icon - The path to the icon image.
- * @param iconDimensions - Optional tuple specifying the width and height of the image, ideally matching its aspect ratio.
- * @param isSrOnly - If true, 'accessibleText' is visually hidden but accessible to screen readers. If false, the text is visible.
- * @param url - The destination path that the link routes to.
- * @param iconClassName - Optional classes to apply to the icon for additional styling.
- * @example
- * // .jsx/.tsx file
- *  <li>
-      <IconLink
-        icon={bookmarkIcon}
-        altText='Go to your bookmarks'
-        accessibleText='Bookmarks'
-        isSrOnly={false}
-        activeStyles='bg-red-500' // Class applied to the Link
-        iconClassName='white-filter' // Class applied to the icon
-        url='/bookmarks'
-      />
-    </li> 
-
-   // global.module.css
-   // will make it so that when the icon is hovered or active, it will be bright white
-      .white-filter {
-        transition: filter 0.3s ease;
-      }
-
-  .white-filter:hover {
-        filter: brightness(0) invert(1);
-}
-
-  .selected.white-filter {
-        filter: brightness(0) invert(1);
-      }
-}
- **/
-
-export default function IconLink({
-  accessibleText,
-  activeStyles = '',
-  altText,
-  icon,
-  iconDimensions,
-  isSrOnly = true,
-  url,
-  iconClassName = '',
-}: IconLinkProps) {
+ * An Icon wrapped within next.js's Link tag. To use, pick one of the available urls and if there's an icon for it then it will use that. It will also check the searchParams for the segment and show the active icon
+ * @param url - The url to redirect to
+ */
+export default function IconLink({ url }: IconLinkProps) {
   const pathname = usePathname();
 
   const isSelected = (route: string) => pathname === route;
   const isActive = isSelected(url);
 
-  const linkClassNames = clsx('flex items-center gap-2', {
-    [activeStyles]: isActive,
-  });
+  const commonSvgClasses =
+    'fill-[#5A698F] hover:fill-logoRed transition duration-300 ease-in-out';
+  const svgClassName = clsx(commonSvgClasses, isActive && 'fill-pureWhite');
 
-  const imageClassNames = clsx(iconClassName, {
-    selected: isActive,
-  });
+  if (url === '/') {
+    return (
+      <Link href='/'>
+        <svg
+          className={svgClassName}
+          width='20'
+          height='20'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path d='M8 0H1C.4 0 0 .4 0 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11H1c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1ZM19 0h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1Z' />
+        </svg>
+        <span className='sr-only'>Go to the Home page</span>
+      </Link>
+    );
+  }
 
-  return (
-    <Link href={url} className={linkClassNames}>
-      <Image
-        className={imageClassNames}
-        src={icon}
-        alt={altText}
-        height={iconDimensions?.[1]}
-        width={iconDimensions?.[0]}
-      />
-      {isSrOnly ? (
-        <span className='sr-only'>{accessibleText}</span>
-      ) : (
-        <span className='text-inherit'>{accessibleText}</span>
-      )}
-    </Link>
-  );
+  if (url === '/movies') {
+    return (
+      <Link href='/movies'>
+        <svg
+          className={svgClassName}
+          width='20'
+          height='20'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path d='M16.956 0H3.044A3.044 3.044 0 0 0 0 3.044v13.912A3.044 3.044 0 0 0 3.044 20h13.912A3.044 3.044 0 0 0 20 16.956V3.044A3.044 3.044 0 0 0 16.956 0ZM4 9H2V7h2v2Zm-2 2h2v2H2v-2Zm16-2h-2V7h2v2Zm-2 2h2v2h-2v-2Zm2-8.26V4h-2V2h1.26a.74.74 0 0 1 .74.74ZM2.74 2H4v2H2V2.74A.74.74 0 0 1 2.74 2ZM2 17.26V16h2v2H2.74a.74.74 0 0 1-.74-.74Zm16 0a.74.74 0 0 1-.74.74H16v-2h2v1.26Z' />
+        </svg>
+        <span className='sr-only'>Go to the Movies page</span>
+      </Link>
+    );
+  }
+
+  if (url === '/tv-series') {
+    return (
+      <Link href='/tv-series'>
+        <svg
+          className={svgClassName}
+          width='20'
+          height='20'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path d='M20 4.481H9.08l2.7-3.278L10.22 0 7 3.909 3.78.029 2.22 1.203l2.7 3.278H0V20h20V4.481Zm-8 13.58H2V6.42h10v11.64Zm5-3.88h-2v-1.94h2v1.94Zm0-3.88h-2V8.36h2v1.94Z' />
+        </svg>
+        <span className='sr-only'>Go to the TV-series page</span>
+      </Link>
+    );
+  }
+
+  if (url === '/bookmarks') {
+    return (
+      <Link href='/bookmarks'>
+        <svg
+          className={svgClassName}
+          width='17'
+          height='20'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path d='M15.387 0c.202 0 .396.04.581.119.291.115.522.295.694.542.172.247.258.52.258.82v17.038c0 .3-.086.573-.258.82a1.49 1.49 0 0 1-.694.542 1.49 1.49 0 0 1-.581.106c-.423 0-.79-.141-1.098-.423L8.46 13.959l-5.83 5.605c-.317.29-.682.436-1.097.436-.202 0-.396-.04-.581-.119a1.49 1.49 0 0 1-.694-.542A1.402 1.402 0 0 1 0 18.52V1.481c0-.3.086-.573.258-.82A1.49 1.49 0 0 1 .952.119C1.137.039 1.33 0 1.533 0h13.854Z' />
+        </svg>
+        <span className='sr-only'>Go to the Bookmarks page</span>
+      </Link>
+    );
+  }
 }
