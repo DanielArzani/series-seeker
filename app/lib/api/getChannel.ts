@@ -1,52 +1,7 @@
-type YouTubeChannelListResponse = {
-  kind: 'youtube#channelListResponse';
-  etag: string;
-  pageInfo: {
-    totalResults: number;
-    resultsPerPage: number;
-  };
-  items: YouTubeChannel[];
-};
-
-type YouTubeChannel = {
-  kind: 'youtube#channel';
-  etag: string;
-  id: string;
-  snippet: {
-    title: string;
-    description: string;
-    customUrl: string;
-    publishedAt: string;
-    thumbnails: {
-      default: YouTubeThumbnail;
-      medium: YouTubeThumbnail;
-      high: YouTubeThumbnail;
-    };
-    defaultLanguage?: string;
-    localized: {
-      title: string;
-      description: string;
-    };
-  };
-  contentDetails: {
-    relatedPlaylists: {
-      likes: string;
-      uploads: string;
-    };
-  };
-  statistics: {
-    viewCount: string;
-    subscriberCount: string;
-    hiddenSubscriberCount: boolean;
-    videoCount: string;
-  };
-};
-
-type YouTubeThumbnail = {
-  url: string;
-  width: number;
-  height: number;
-};
+import {
+  YouTubeChannel,
+  YouTubeChannelListResponse,
+} from '../types/ChannelType';
 
 const EXAMPLE_CHANNEL_ID = 'UCzpl6CJP6lo5vjsEAeIHnsg';
 
@@ -57,7 +12,7 @@ const EXAMPLE_CHANNEL_ID = 'UCzpl6CJP6lo5vjsEAeIHnsg';
 export async function getChannel(
   channelId: string
 ): Promise<YouTubeChannel | null> {
-  const API_KEY = process.env.YOUTUBE_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 
   const url = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${API_KEY}`;
 

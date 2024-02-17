@@ -1,18 +1,22 @@
+'use client';
 import MainContent from './ui/MainContent/MainContent';
 import TrendingContent from './ui/TrendingContent/TrendingContent';
-import { getChannel } from './lib/api/getChannel';
+
+import ContentHolder from './ui/ContentHolder/ContentHolder';
+import { ChannelProvider } from './contexts/channelContext';
 
 /**
  * The homepage
  * The root route (/)
  */
 export default function Homepage() {
-  // const results = getChannel('UCzpl6CJP6lo5vjsEAeIHnsg');
-
   return (
     <>
-      <TrendingContent />
-      <MainContent />
+      <ChannelProvider>
+        <ContentHolder />
+      </ChannelProvider>
+      {/* <TrendingContent />
+      <MainContent /> */}
     </>
   );
 }
