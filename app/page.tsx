@@ -9,8 +9,8 @@ import Image from 'next/image';
  * The root route (/)
  */
 export default async function Homepage() {
-  // const channel = await getChannel('UCzpl6CJP6lo5vjsEAeIHnsg');
-  const channel = await getChannel('UCrcrDXK620kopfSffPxrdTA');
+  const channel = await getChannel('UCzpl6CJP6lo5vjsEAeIHnsg');
+  // const channel = await getChannel('UCrcrDXK620kopfSffPxrdTA');
 
   if (!channel) {
     return <h1>Channel not found</h1>;
@@ -18,7 +18,7 @@ export default async function Homepage() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h2>{channel.snippet.title}</h2>
         <p>{channel.snippet.description}</p>
         <Image
@@ -27,7 +27,9 @@ export default async function Homepage() {
           width={`${channel.snippet.thumbnails.default.width}`}
           height={`${channel.snippet.thumbnails.default.height}`}
         />
-      </div>
+      </div> */}
+      <TrendingContent />
+      <MainContent />
     </>
   );
 }
