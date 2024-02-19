@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     domains: ['yt3.ggpht.com'],
   },
+  logging: { fetches: { fullUrl: true } },
 };
 
 export default nextConfig;

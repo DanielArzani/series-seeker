@@ -1,7 +1,7 @@
 import VideoCard from '@/app/components/VideoCard/VideoCard';
 
 /**
- * The main content of the app which would include a list of content or a list of found content
+ * The list of watched videos
  */
 export default function MainContent() {
   return (
