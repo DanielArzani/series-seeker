@@ -1,5 +1,5 @@
 import ChannelCard from '@/app/components/ChannelCard/ChannelCard';
-import { getAllChannels } from '@/app/lib/api/getChannel';
+import { getAllChannels } from '@/app/lib/api/getChannels';
 
 /**
  * An un-ordered list of trusted youtube channels

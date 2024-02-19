@@ -10,7 +10,6 @@ enum AllowedChannels {
   'impact-video-ministries' = 'UCTsRTfwxwj4_ep_MNM17lqg',
   'grace-to-you' = 'UCneKpMu9SFGlt2usTdAI75A',
   'toronto-church-on-the-rock' = 'UCLCi0Vpg6Lv5zOx4wHcEY2g',
-  'testNull' = 'null',
 }
 
 /**

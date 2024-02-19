@@ -42,7 +42,7 @@ export type YouTubeChannel = {
   };
 };
 
-export type YouTubeThumbnail = {
+type YouTubeThumbnail = {
   url: string;
   width: number;
   height: number;

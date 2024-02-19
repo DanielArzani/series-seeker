@@ -4,7 +4,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['yt3.ggpht.com'],
+    domains: ['yt3.ggpht.com', 'i.ytimg.com'],
   },
   logging: { fetches: { fullUrl: true } },
 };
