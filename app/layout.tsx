@@ -8,7 +8,7 @@ import SearchForm from './ui/SearchForm/SearchForm';
 
 export const metadata: Metadata = {
   title: 'Series Seeker',
-  description: 'A web for finding new movies and TV shows',
+  description: 'An app for watching real Christian sermons and videos',
 };
 
 /**
