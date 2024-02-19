@@ -9,7 +9,8 @@ type YouTubeVideoResponse = {
  * @param videoId - The YouTube video's ID
  */
 export async function getVideo(videoId: string): Promise<VideoType | null> {
-  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+  const API_KEY = process.env.YOUTUBE_API_KEY;
+  // const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 
   const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
 
@@ -48,17 +49,16 @@ const videoList = [
  * Returns a list of youtube videos, if nothing is passed in then the default recommended ones are used
  * @param videoIds - The array of YouTube video IDs
  */
-export async function getVideos(
+export async function getAllVideos(
   videoIds: string[] = videoList
 ): Promise<(VideoType | null)[]> {
-  const videos: (VideoType | null)[] = [];
+  try {
+    const videoPromises = videoIds.map(getVideo);
+    const videos = await Promise.all(videoPromises);
 
-  for (const videoId of videoIds) {
-    const video = await getVideo(videoId);
-    if (video !== null) {
-      videos.push(video);
-    }
+    return videos.filter((video) => video !== null);
+  } catch (error) {
+    console.error('Error getting videos:', error);
+    return [];
   }
-
-  return videos;
 }

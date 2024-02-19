@@ -1,11 +1,14 @@
 import ChannelCard from '@/app/components/ChannelCard/ChannelCard';
+import VideoCard from '@/app/components/VideoCard/VideoCard';
 import { getAllChannels } from '@/app/lib/api/getChannels';
+import { getVideo } from '@/app/lib/api/getVideos';
 
 /**
  * An un-ordered list of trusted youtube channels
  */
 export default async function TrustedChannels() {
   const channels = await getAllChannels();
+
 
   return (
     <section className='trending mb-6 md:mb-10'>

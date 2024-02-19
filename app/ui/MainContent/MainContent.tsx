@@ -1,13 +1,11 @@
 import VideoCard from '@/app/components/VideoCard/VideoCard';
-import { getVideos } from '@/app/lib/api/getVideos';
+import { getAllVideos } from '@/app/lib/api/getVideos';
 
 /**
  * The list of watched videos
  */
 export default async function MainContent() {
-  const videos = await getVideos();
-
-  if (videos === null) return null;
+  const videos = await getAllVideos();
 
   return (
     <main className='mainContent'>
