@@ -19,7 +19,7 @@ enum AllowedChannels {
 export async function getChannel(
   channelName: keyof typeof AllowedChannels
 ): Promise<YouTubeChannel | null> {
-  const API_KEY = process.env.YOUTUBE_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const channelId = AllowedChannels[channelName];
 
   const url = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${API_KEY}`;

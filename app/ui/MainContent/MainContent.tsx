@@ -14,6 +14,7 @@ export default async function MainContent() {
         {videos.map((video) => {
           return <VideoCard key={video?.id} video={video} />;
         })}
+        {}
       </div>
     </main>
   );
