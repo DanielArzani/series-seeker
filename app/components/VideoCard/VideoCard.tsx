@@ -32,7 +32,7 @@ export default function VideoCard({ video }: VideoCardProps) {
               alt=''
             />
 
-            <button className='bookmarkBtn flex items-center justify-center absolute right-5 top-5'>
+            <button className='bookmarkBtn flex items-center justify-center absolute right-1 top-9'>
               <Bookmark isActive={false} />
 
               <span className='sr-only'>Bookmark this</span>
@@ -41,21 +41,6 @@ export default function VideoCard({ video }: VideoCardProps) {
 
           <div className='flex flex-col-reverse'>
             <h2 className='header-small'>{title}</h2>
-
-            <p className='flex gap-1 font-light text-pureWhite text-xs opacity-75'>
-              <span>2019</span>
-
-              <span className='opacity-75 h-1 w-1 bg-pureWhite rounded-full self-center'></span>
-
-              <span className='flex gap-1'>
-                <Image src={movieIcon} alt='' width={12} height={12} />
-                Movie
-              </span>
-
-              <span className='opacity-75 h-1 w-1 bg-pureWhite rounded-full self-center'></span>
-
-              <span>PG</span>
-            </p>
           </div>
         </Link>
       </div>

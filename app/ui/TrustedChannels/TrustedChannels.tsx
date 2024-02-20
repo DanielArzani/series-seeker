@@ -1,7 +1,5 @@
 import ChannelCard from '@/app/components/ChannelCard/ChannelCard';
-import VideoCard from '@/app/components/VideoCard/VideoCard';
 import { getAllChannels } from '@/app/lib/api/getChannels';
-import { getVideo } from '@/app/lib/api/getVideos';
 
 /**
  * An un-ordered list of trusted youtube channels
@@ -9,9 +7,8 @@ import { getVideo } from '@/app/lib/api/getVideos';
 export default async function TrustedChannels() {
   const channels = await getAllChannels();
 
-
   return (
-    <section className='trending mb-6 md:mb-10'>
+    <section className='trusted-channels mb-6 md:mb-10'>
       <h2 className='header-large'>Trusted Channels</h2>
 
       <div className='flex items-center gap-10 overflow-auto'>
