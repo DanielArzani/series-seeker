@@ -36,9 +36,9 @@ export default function ChannelCard({ channel }: ChannelCardProps) {
 
             <span className='sr-only'>Bookmark this</span>
           </button>
-          <div className='flex flex-col-reverse absolute -bottom-6 left-2 md:-bottom-10 md:left-5'>
+          {/* <div className='flex flex-col-reverse absolute -bottom-6 left-2 md:-bottom-10 md:left-5'>
             <h2 className='header-small'>{channel.snippet.title}</h2>
-          </div>
+          </div> */}
         </Link>
       </div>
     </>

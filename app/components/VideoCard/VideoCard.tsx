@@ -1,7 +1,8 @@
-import movieIcon from '@/public/icon-category-movie.svg';
-import Link from 'next/link';
+'use client';
+
+import YouTube, { YouTubeProps } from 'react-youtube';
+
 import Bookmark from '../Bookmark/Bookmark';
-import Image from 'next/image';
 import { VideoType } from '@/app/lib/types/VideoType';
 
 type VideoCardProps = {
@@ -9,7 +10,7 @@ type VideoCardProps = {
 };
 
 /**
- * This is a card that displays the thumbnail and related info of youtube videos as well as links to that channel
+ * Initializes a YouTube player iframe for a given video.
  * @param videos - A youtube video
  */
 export default function VideoCard({ video }: VideoCardProps) {
@@ -19,31 +20,22 @@ export default function VideoCard({ video }: VideoCardProps) {
   const { title, description, thumbnails } = snippet;
   const { url } = thumbnails.high;
 
+  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts: YouTubeProps['opts'] = {
+    // change the width and height in the main-content-grid class to change the size of the video player
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+    },
+  };
   return (
     <>
-      <div className='rounded-md'>
-        <Link href='/'>
-          <div className='relative'>
-            <Image
-              className='rounded-md'
-              src={url}
-              width={560}
-              height={348}
-              alt=''
-            />
-
-            <button className='bookmarkBtn flex items-center justify-center absolute right-1 top-9'>
-              <Bookmark isActive={false} />
-
-              <span className='sr-only'>Bookmark this</span>
-            </button>
-          </div>
-
-          <div className='flex flex-col-reverse'>
-            <h2 className='header-small'>{title}</h2>
-          </div>
-        </Link>
-      </div>
+      <YouTube videoId={video.id} opts={opts} onReady={onPlayerReady} />
     </>
   );
 }
