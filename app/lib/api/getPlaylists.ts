@@ -12,7 +12,6 @@ export async function getPlaylists(
 
   try {
     const response = await fetch(url);
-    console.log('Fetching Playlists');
 
     if (!response.ok) {
       const responseBody = await response.text();
