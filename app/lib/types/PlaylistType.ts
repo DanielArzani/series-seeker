@@ -5,10 +5,13 @@ export type PlaylistType = {
   snippet: Snippet;
 };
 
-type Thumbnail = {
-  url: string;
-  width: number;
-  height: number;
+type Snippet = {
+  publishedAt: string;
+  channelId: string;
+  title: string;
+  description: string;
+  thumbnails: Thumbnails;
+  channelTitle: string;
 };
 
 type Thumbnails = {
@@ -17,11 +20,8 @@ type Thumbnails = {
   high: Thumbnail;
 };
 
-type Snippet = {
-  publishedAt: string;
-  channelId: string;
-  title: string;
-  description: string;
-  thumbnails: Thumbnails;
-  channelTitle: string;
+type Thumbnail = {
+  url: string;
+  width: number;
+  height: number;
 };

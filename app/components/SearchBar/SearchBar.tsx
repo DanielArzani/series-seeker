@@ -30,11 +30,10 @@ export default function SearchBar({ setSearchTerm }: SearchBarProps) {
           id='search'
           className='bg-inherit border-transparent pl-10 w-full'
           type='text'
-          placeholder='Search for movies or TV series'
+          placeholder='Search for Christian Playlists'
           onChange={(e) => {
             handleSearch(e.target.value);
           }}
-          // defaultValue={setSearchTerm(e.target.value)}
           required
           style={{ caretColor: 'var(--logo-red)' }}
         />
