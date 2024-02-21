@@ -12,11 +12,11 @@ export default function Navbar() {
         </li>
 
         <li>
-          <IconLink url='/movies' />
+          <IconLink url='/playlists' />
         </li>
 
         <li>
-          <IconLink url='/tv-series' />
+          <IconLink url='/shorts' />
         </li>
 
         <li>

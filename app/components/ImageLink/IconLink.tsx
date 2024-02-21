@@ -39,9 +39,9 @@ export default function IconLink({ url }: IconLinkProps) {
     );
   }
 
-  if (url === '/movies') {
+  if (url === '/playlists') {
     return (
-      <Link href='/movies'>
+      <Link href='/playlists'>
         <svg
           className={svgClassName}
           width='20'
@@ -55,9 +55,9 @@ export default function IconLink({ url }: IconLinkProps) {
     );
   }
 
-  if (url === '/tv-series') {
+  if (url === '/shorts') {
     return (
-      <Link href='/tv-series'>
+      <Link href='/shorts'>
         <svg
           className={svgClassName}
           width='20'

@@ -1,1 +1,1 @@
-export type URLType = '/' | '/movies' | '/tv-series' | '/bookmarks';
+export type URLType = '/' | '/playlists' | '/shorts' | '/bookmarks';

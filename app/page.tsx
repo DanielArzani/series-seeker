@@ -7,8 +7,8 @@ import TrustedChannels from './ui/TrustedChannels/TrustedChannels';
 export default function Homepage() {
   return (
     <>
-      <TrustedChannels />
-      <MainContent />
+      {/* <TrustedChannels />
+      <MainContent /> */}
     </>
   );
 }

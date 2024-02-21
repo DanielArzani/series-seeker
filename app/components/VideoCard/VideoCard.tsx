@@ -16,10 +16,6 @@ type VideoCardProps = {
 export default function VideoCard({ video }: VideoCardProps) {
   if (video === null) return null;
 
-  const { snippet } = video;
-  const { title, description, thumbnails } = snippet;
-  const { url } = thumbnails.high;
-
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
