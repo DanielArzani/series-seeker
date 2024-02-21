@@ -10,7 +10,6 @@ type YouTubeVideoResponse = {
  */
 export async function getVideo(videoId: string): Promise<VideoType | null> {
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
-  // const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 
   const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
 
