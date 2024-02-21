@@ -1,6 +1,19 @@
+'use client';
+
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 /**
  * Finds playlists that match the users search query
  */
 export default function PlaylistsPage() {
-  return <div className='text-white absolute left-1/2'>Playlists Page</div>;
+  const searchQuery = useSearchParams();
+
+  const [playlists, setPlaylists] = useState(null);
+
+  useEffect(() => {
+    async () => {};
+  }, []);
+
+  return <div className='text-white playlists'>Playlists Page</div>;
 }

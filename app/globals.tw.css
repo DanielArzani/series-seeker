@@ -80,6 +80,12 @@
     grid-row: 4/5;
   }
 
+  /* trusted-channels and mainContent won't be active at the same time as playlists and shorts so its alright if there grid-row/columns match */
+  .playlists {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+
   /* TABLET */
   @media (min-width: 768px) {
     .header {

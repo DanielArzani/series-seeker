@@ -2,26 +2,20 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 import searchIcon from '@/public/icon-search.svg';
 
-/**
- * Gets user search query and stores its value to the search params
- */
-export default function SearchBar() {
-  const { replace } = useRouter();
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+type SearchBarProps = {
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+};
 
+/**
+ * Gets user search query and passes it back to its parent component
+ * @param setSearchTerm - The state that stores the search term
+ */
+export default function SearchBar({ setSearchTerm }: SearchBarProps) {
   const handleSearch = (term: string) => {
-    const params = new URLSearchParams(searchParams);
-    if (term) {
-      params.set('query', term);
-    } else {
-      params.delete('query');
-    }
-    replace(`${pathname}?${params.toString()}`);
+    setSearchTerm(term);
   };
 
   return (
@@ -40,7 +34,7 @@ export default function SearchBar() {
           onChange={(e) => {
             handleSearch(e.target.value);
           }}
-          defaultValue={searchParams.get('query')?.toString()}
+          // defaultValue={setSearchTerm(e.target.value)}
           required
           style={{ caretColor: 'var(--logo-red)' }}
         />
