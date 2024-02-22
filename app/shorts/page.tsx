@@ -6,8 +6,7 @@ import VideoCard from '../components/VideoCard/VideoCard';
  * Shows a daily recommended youtube short
  */
 export default async function ShortsPage() {
-  // const video = await getVideo('ats1Jt6hD_8');
-  const video = await getVideo('agguCUUiqUk');
+  const video = await getVideo('eFcnsacJuzU');
   if (video === null) return;
 
   return (
