@@ -7,6 +7,7 @@ import { PlaylistType } from '../lib/types/PlaylistType';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDateForUser } from '../lib/utils/date';
+import SearchForm from '../ui/SearchForm/SearchForm';
 
 /**
  * Finds playlists that match the users search query
@@ -26,7 +27,14 @@ export default function PlaylistPage() {
     })();
   }, [searchQuery]);
 
-  if (playlists === null) return <div className='text-white playlists'></div>;
+  if (playlists === null) {
+    return (
+      <>
+        <SearchForm />
+        <div className='text-white playlists'></div>
+      </>
+    );
+  }
 
   if (playlists.length === 0)
     return <div className='text-white'>No playlists found</div>;
@@ -57,6 +65,7 @@ export default function PlaylistPage() {
 
   return (
     <>
+      <SearchForm />
       <ul className='text-white playlists cards'>
         {playlists.map((playlist, index) => {
           return (

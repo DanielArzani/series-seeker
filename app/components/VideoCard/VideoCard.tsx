@@ -7,13 +7,19 @@ import { VideoType } from '@/app/lib/types/VideoType';
 
 type VideoCardProps = {
   video: VideoType | null;
+  vHeight?: string | number;
+  vWidth?: string | number;
 };
 
 /**
  * Initializes a YouTube player iframe for a given video.
  * @param videos - A youtube video
  */
-export default function VideoCard({ video }: VideoCardProps) {
+export default function VideoCard({
+  video,
+  vWidth = '100%',
+  vHeight = '100%',
+}: VideoCardProps) {
   if (video === null) return null;
 
   const onPlayerReady: YouTubeProps['onReady'] = (event) => {
@@ -23,15 +29,11 @@ export default function VideoCard({ video }: VideoCardProps) {
 
   const opts: YouTubeProps['opts'] = {
     // change the width and height in the main-content-grid class to change the size of the video player
-    height: '100%',
-    width: '100%',
+    height: vHeight,
+    width: vWidth,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
     },
   };
-  return (
-    <>
-      <YouTube videoId={video.id} opts={opts} onReady={onPlayerReady} />
-    </>
-  );
+  return <YouTube videoId={video.id} opts={opts} onReady={onPlayerReady} />;
 }
