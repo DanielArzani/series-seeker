@@ -145,14 +145,14 @@
   /*-------------------
           CARD
    -------------------*/
-  /* .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 4rem 5vw;
-  padding: 0;
-  list-style-type: none;
-} */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+  }
 
   .card {
     position: relative;
@@ -191,7 +191,7 @@
     display: flex;
     align-items: center;
     gap: 2em;
-    padding: 2em;
+    padding: 1em;
     border-radius: calc(var(--curve) * 1px) 0 0 0;
     background-color: var(--surface-color);
     transform: translateY(-100%);

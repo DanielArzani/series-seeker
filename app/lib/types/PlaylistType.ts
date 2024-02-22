@@ -1,7 +1,10 @@
 export type PlaylistType = {
   kind: string;
   etag: string;
-  id: string;
+  id: {
+    kind: string;
+    playlistId: string;
+  };
   snippet: Snippet;
 };
 
