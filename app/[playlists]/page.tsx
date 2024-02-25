@@ -1,31 +1,21 @@
-'use client';
-
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { getPlaylists } from '../lib/api/getPlaylists';
-import { PlaylistType } from '../lib/types/PlaylistType';
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatDateForUser } from '../lib/utils/date';
 import SearchForm from '../ui/SearchForm/SearchForm';
+import { formatDateForUser } from '../lib/utils/date';
+import { getPlaylists } from '../lib/api/getPlaylists';
+
+type PlaylistPageProps = {
+  params: { playlists: string };
+  searchParams: { query: string };
+};
 
 /**
  * Finds playlists that match the users search query
  */
-export default function PlaylistPage() {
-  const searchQuery = useSearchParams();
-  const [playlists, setPlaylists] = useState<PlaylistType[] | null>(null);
-
-  useEffect(() => {
-    const query = searchQuery.get('query');
-
-    if (query === null) return;
-
-    (async () => {
-      const data = await getPlaylists(query);
-      setPlaylists(data);
-    })();
-  }, [searchQuery]);
+export default async function PlaylistPage({
+  searchParams,
+}: PlaylistPageProps) {
+  const playlists = await getPlaylists(searchParams.query);
 
   if (playlists === null) {
     return (
@@ -37,35 +27,17 @@ export default function PlaylistPage() {
   }
 
   if (playlists.length === 0)
-    return <div className='text-white'>No playlists found</div>;
-
-  //! This attempt at using route handlers to fetch data was unsuccessful
-  // useEffect(() => {
-  //   const query = searchQuery.get('query');
-  //   if (!query) return;
-
-  //   const fetchData = async () => {
-  //     const response = await fetch(`/api/playlists`);
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       setPlaylists(data);
-  //     } else {
-  //       // Handle errors or set an error state as needed
-  //       console.error('Failed to fetch playlists');
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [searchQuery]);
-
-  // if (playlists === null) return <div className='text-white playlists'></div>;
-
-  // if (playlists.length === 0)
-  //   return <div className='text-white'>No playlists found</div>;
+    return (
+      <>
+        <SearchForm />
+        <div className='text-white'>No playlists found</div>
+      </>
+    );
 
   return (
     <>
       <SearchForm />
+
       <ul className='text-white playlists cards'>
         {playlists.map((playlist, index) => {
           return (
